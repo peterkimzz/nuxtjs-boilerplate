@@ -16,6 +16,9 @@
         <nuxt-link
           to="/about"
           class="button--grey">About Us</nuxt-link>
+          <nuxt-link
+          to="/posts"
+          class="button--grey">See posts</nuxt-link>
       </div>
     </div>
   </section>

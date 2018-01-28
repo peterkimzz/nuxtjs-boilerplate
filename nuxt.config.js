@@ -1,16 +1,21 @@
 module.exports = {
   srcDir: 'app/',
   head: {
-    title: 'nuxt-express-by-factoryhunt',
+    title: 'nuxt-express-sass | Factory Hunt Team',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js + Express.js Starter Template by Factory Hunt' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js + Express.js + Sass Starter Template by Factory Hunt Team' },
+      { hid: 'keywords', name:'keywords', content: 'nuxtjs, nuxt, node, nodejs, express, expressjs, axios' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
-  },  
+  },
+  // variables in "env" are use client & server side. ex) const url = process.env.baseUrl
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
   /*
   ** Customize the progress bar color
   */
@@ -19,6 +24,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['axios'],
     /*
     ** Run ESLint on save
     */
