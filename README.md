@@ -1,4 +1,4 @@
-# Nuxt.js + Express,js Starter Template
+# Nuxt.js + Express.js Starter Template
 
 > Nuxt.js Starter Template by Factory Hunt Team.
 > Nuxt.js + Express.js + Sass, Scss + Google Font
