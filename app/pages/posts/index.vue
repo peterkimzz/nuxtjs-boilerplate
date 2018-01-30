@@ -26,8 +26,6 @@
 
 <style lang="scss" scoped>
   section {
-    max-width: 1040px;
-    margin: 0 auto;
 
     .posts-container {
       padding: 2rem 0;

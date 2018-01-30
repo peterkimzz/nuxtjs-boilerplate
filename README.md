@@ -1,6 +1,7 @@
-# nuxt-express-sass-by-factoryhunt
+# Nuxt.js + Express.js Starter Template
 
-> Nuxt.js + Express.js + Sass Starter Template by Factory Hunt Team.
+> Nuxt.js Starter Template by Factory Hunt Team.
+> Nuxt.js + Express.js + Sass, Scss + Google Font
 
 ## Build Setup
 
