@@ -12,4 +12,5 @@ dist
 
 # Code Editor
 .idea
+.DS_Store
 .editorconfig

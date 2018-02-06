@@ -23,5 +23,6 @@ app.use('/api', api)
 app.use(nuxt.render)
 
 // Start Server
-app.listen(PORT)
-console.log(`Server is listening on http://${HOST}:${PORT}`)
+app.listen(PORT, () => {
+  console.log(`Server is listening on http://${HOST}:${PORT}`)
+})
