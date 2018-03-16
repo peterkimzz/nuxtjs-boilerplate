@@ -1,7 +1,5 @@
 # Nuxt.js + Express.js Starter Template
 
-> peterkimzz.com
-> Nuxt.js Starter Template by peterkimzz
 > Nuxt.js + Express.js + Sass, Scss + Vuex + Express Session + Redis
 
 ## Build Setup
@@ -22,3 +20,4 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+peterkimzz.com
