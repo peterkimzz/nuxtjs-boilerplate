@@ -1,40 +1,26 @@
 <template>
-  <div class="body-container">
-    <div class="body-contents">
-      <nuxt/>
+  <div>
+    <navigation-bar/>
+    <div class="body-container">
+      <div class="body-contents">
+        <nuxt/>
+      </div>
+      <footer-bar/>
     </div>
   </div>
 </template>
 
+<script>
+  import NavigationBar from '~/components/NavigationBar'
+  import FooterBar from '~/components/FooterBar'
+  export default {
+    components: {
+      NavigationBar,
+      FooterBar
+    }
+  }
+</script>
+
 <style lang="scss" scoped>
 @import '~assets/scss/index';
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
 </style>

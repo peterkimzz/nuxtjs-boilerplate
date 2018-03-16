@@ -1,24 +1,24 @@
 # Nuxt.js + Express.js Starter Template
 
-> Nuxt.js Starter Template by Factory Hunt Team.
-> Nuxt.js + Express.js + Sass, Scss + Google Font
+> peterkimzz.com
+> Nuxt.js Starter Template by peterkimzz
+> Nuxt.js + Express.js + Sass, Scss + Vuex + Express Session + Redis
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-$ npm install # Or yarn install
+$ yarn
 
 # serve with hot reload at localhost:3000
-$ npm run dev # Or yarn dev
+$ yarn dev
 
 # build for production and launch server
-$ npm run build # Or yarn build
-$ npm start # Or yarn start
+$ yarn build
+$ yarn start
 
 # generate static project
-$ npm run generate # Or yarn generate
+$ yarn generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-By Factory Hunt Team.

@@ -1,7 +1,7 @@
 module.exports = {
   srcDir: 'app/',
   head: {
-    title: 'Nuxt.js Express.js Starter Template | Factory Hunt Team',
+    title: 'Nuxt.js + Express.js Perfect Starter Template',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

@@ -1,13 +1,16 @@
+process.env.DEBUG = 'nuxt:*'
 const app = require('express')()
 
-const nuxt = require('./config/nuxt')
+// Modules
+const nuxt = require('./middleware/nuxt')
 const api = require('./api')
-
-// Libraries
 const morgan = require('morgan')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const session = require('express-session')
+const redis = require('./middleware/redis')(session)
 
+// Properties
 const HOST = process.env.HOST || '127.0.0.1'
 const PORT = process.env.PORT || 3000 
 
@@ -16,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 app.use(cors())
+app.use(session(redis))
 
 // Api
 app.use('/api', api)

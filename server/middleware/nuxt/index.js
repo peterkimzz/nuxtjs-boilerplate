@@ -1,5 +1,5 @@
 const { Nuxt, Builder } = require('nuxt')
-const config = require('../../nuxt.config')
+const config = require('../../../nuxt.config.js')
 
 // Initialize Nuxt.js Instance
 const isProd = process.env.NODE_ENV === 'production'

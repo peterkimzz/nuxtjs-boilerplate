@@ -1,7 +1,5 @@
 <template>
   <section>
-    <nuxt-link to="/">Go home</nuxt-link>
-
     <h1>Posts</h1>
     <div class="posts-container">
       <div class="post-container" v-for="(post,index) in posts" :key="index">
@@ -25,19 +23,18 @@
 </script>
 
 <style lang="scss" scoped>
-  section {
+@import "~assets/scss/index";
+  .posts-container {
+    padding: 2rem 0;
 
-    .posts-container {
-      padding: 2rem 0;
+    .post-container {
+      padding: 1rem;
+      border-radius: 3px;
+      transition: box-shadow .1s linear;
 
-      .post-container {
-        padding: 1rem;
-        border-radius: 3px;
-
-        &:hover {
-          box-shadow: 1px 1px 10px #484848;
-          cursor: pointer;
-        }
+      &:hover {
+        box-shadow: $box-shadow;
+        cursor: pointer;
       }
     }
   }

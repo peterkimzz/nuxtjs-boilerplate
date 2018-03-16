@@ -3,18 +3,16 @@
     <div>
       <app-logo/>
       <h1 class="title">Nuxt + Express</h1>
-      <h2 class="subtitle">Nuxt.js + Express.js Starter Template by Factory Hunt</h2>
+      <ul>
+        <li><h2 class="subtitle">Nuxt.js</h2></li>
+        <li><h2 class="subtitle">Express.js</h2></li>
+        <li><h2 class="subtitle">Scss</h2></li>
+        <li><h2 class="subtitle">Redis Session</h2></li>
+      </ul>
       <div class="links">
-        <a
-          href="https://www.factoryhunt.com/"
-          target="_blank"
-          class="button--green">Go to Factory Hunt</a>
-        <nuxt-link
-          to="/about"
-          class="button--grey">About Us</nuxt-link>
         <nuxt-link
         to="/posts"
-        class="button--grey">See posts</nuxt-link>
+        class="button--grey">See Sample posts using axios.</nuxt-link>
       </div>
     </div>
   </section>
@@ -39,6 +37,11 @@ export default {
   align-items: center;
   text-align: center;
   height: 100%;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 
   .title {
     display: block;
