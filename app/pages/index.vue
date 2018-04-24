@@ -11,8 +11,8 @@
       </ul>
       <div class="links">
         <nuxt-link
-        to="/posts"
-        class="button--grey">See Sample posts using axios.</nuxt-link>
+          to="/posts"
+          class="button--grey">See Sample posts using axios.</nuxt-link>
       </div>
     </div>
   </section>

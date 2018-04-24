@@ -4,16 +4,23 @@
     <div class="nav-section">
       <a href="/">
         <div id="nav-logo-container">
-          <img id="nav-logo" src="~/assets/img/nuxt-logo.png" alt="logo">
+          <img 
+            id="nav-logo" 
+            src="~/assets/img/nuxt-logo.png" 
+            alt="logo">
         </div>
       </a>
     </div>
 
     <!-- Center -->
-    <div class="nav-section" id="nav-center-container"></div>
+    <div 
+      id="nav-center-container"
+      class="nav-section"/>
 
     <!-- Buttons -->
-    <div class="nav-section" id="nav-button-container">
+    <div 
+      id="nav-button-container"
+      class="nav-section">
       <ul>
         <li><nuxt-link to="/register">Sign Up</nuxt-link></li>
         <li><nuxt-link to="/login">Login</nuxt-link></li>
@@ -23,7 +30,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "~assets/scss/index";
+@import '~assets/scss/index';
 nav {
   display: table;
   position: relative;

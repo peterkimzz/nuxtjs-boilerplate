@@ -1,10 +1,10 @@
-# Nuxt.js + Express.js Starter Template
+# Nuxt.js + Express.js Perfect Starter Template
 
 > Nuxt.js + Express.js + Sass, Scss + Vuex + Express Session + Redis
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ yarn
 
