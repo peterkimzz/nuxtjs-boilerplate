@@ -12,10 +12,10 @@ const redis = require('./middleware/redis')(session)
 
 // Properties
 const HOST = process.env.HOST || '127.0.0.1'
-const PORT = process.env.PORT || 3000 
+const PORT = process.env.PORT || 3000
 
 // Middlewares
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 app.use(cors())

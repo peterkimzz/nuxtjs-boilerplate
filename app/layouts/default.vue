@@ -11,14 +11,14 @@
 </template>
 
 <script>
-  import NavigationBar from '~/components/NavigationBar'
-  import FooterBar from '~/components/FooterBar'
-  export default {
-    components: {
-      NavigationBar,
-      FooterBar
-    }
+import NavigationBar from '~/components/NavigationBar'
+import FooterBar from '~/components/FooterBar'
+export default {
+  components: {
+    NavigationBar,
+    FooterBar
   }
+}
 </script>
 
 <style lang="scss" scoped>
