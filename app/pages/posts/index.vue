@@ -3,7 +3,7 @@
     <h1>Posts</h1>
     <div class="posts-container">
       <div 
-        v-for="(post,index) in posts" 
+        v-for="(post,index) in posts"
         :key="index"
         class="post-container">
         <h2>{{ post.title }}</h2>
@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
-  async asyncData() {
-    let { data } = await axios.get('https://jsonplaceholder.typicode.com/posts')
+  async asyncData({ app }) {
+    const posts = await app.$axios.$get('http://jsonplaceholder.typicode.com/posts')
+
     return {
-      posts: data
+      posts
     }
   }
 }

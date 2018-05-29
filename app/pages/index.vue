@@ -4,14 +4,22 @@
       <app-logo/>
       <h1 class="title">Nuxt + Express</h1>
       <ul>
-        <li><h2 class="subtitle">Nuxt.js</h2></li>
-        <li><h2 class="subtitle">Express.js</h2></li>
-        <li><h2 class="subtitle">Scss</h2></li>
-        <li><h2 class="subtitle">Redis Session</h2></li>
+        <li>
+          <h2 class="subtitle">Nuxt.js</h2>
+        </li>
+        <li>
+          <h2 class="subtitle">Express.js</h2>
+        </li>
+        <li>
+          <h2 class="subtitle">Scss</h2>
+        </li>
+        <li>
+          <h2 class="subtitle">Redis Session</h2>
+        </li>
       </ul>
       <div class="links">
-        <nuxt-link
-          to="/posts"
+        <nuxt-link 
+          to="/posts" 
           class="button--grey">See Sample posts using axios.</nuxt-link>
       </div>
     </div>
@@ -24,7 +32,8 @@ import AppLogo from '~/components/AppLogo.vue'
 export default {
   components: {
     AppLogo
-  }
+  },
+  mounted() {}
 }
 </script>
 

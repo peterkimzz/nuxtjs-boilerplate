@@ -1,6 +1,6 @@
 # Nuxt.js + Express.js Perfect Starter Template
 
-> Nuxt.js + Express.js + Sass, Scss + Vuex + Express Session + Redis
+> Nuxt.js + Express.js + Sass, Scss + Vuex + Express Session + Redis + Axios + Google Analytics + Sitemap Auto Generator
 
 ## Build Setup
 
@@ -19,5 +19,5 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+.
 peterkimzz.com

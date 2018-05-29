@@ -15,5 +15,8 @@ module.exports = {
   // required to lint *.vue files
   plugins: ['vue'],
   // add your custom rules here
-  rules: {}
+  rules: {
+    // indent: ['error', 2]
+    // 'vue/html-self-closing': 'off'
+  }
 }

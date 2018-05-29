@@ -26,22 +26,32 @@ module.exports = {
   },
   // variables in "env" are use client & server side. ex) const url = process.env.baseUrl
   env: {
+    host: '127.0.0.1',
+    port: '3000',
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
-  /*
-  ** Customize the progress bar color
-  */
   loading: { color: '#3B8070' },
-  // Global CSS
   css: ['~assets/scss/index.scss'],
-  /*
-  ** Build configuration
-  */
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/sitemap',
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'AB-12345-6' // Replace your api key
+      }
+    ]
+  ],
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://127.0.0.1.com',
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: false, // Enable me when using nuxt generate
+    exclude: ['/admin/**']
+  },
+  plugins: ['~/plugins/axios'],
   build: {
-    vendor: ['axios'],
-    /*
-    ** Run ESLint on save
-    */
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
