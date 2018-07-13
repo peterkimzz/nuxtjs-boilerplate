@@ -42,6 +42,14 @@ module.exports = {
       }
     ]
   ],
+  sentry: {
+    public_key: '',
+    private_key: '',
+    project_id: '',
+    config: {
+      // Additional config
+    }
+  },
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://127.0.0.1.com',

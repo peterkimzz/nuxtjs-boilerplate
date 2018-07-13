@@ -1,35 +1,22 @@
 Arguments: 
-  /usr/local/Cellar/node/9.11.1/bin/node /usr/local/Cellar/yarn/1.6.0/libexec/bin/yarn.js add @nuxtjs/google-analytic
+  C:\Program Files\nodejs\node.exe C:\Users\peter\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js dev
 
 PATH: 
-  /Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Friday/Library/Android/sdk/tools:/Users/Friday/Library/Android/sdk/platform-tools
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\peter\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\peter\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Utilities 1.6;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Microsoft VS Code\bin;C:\Users\peter\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\peter\AppData\Roaming\npm;C:\Program Files\Bandizip
 
 Yarn version: 
-  1.6.0
+  1.5.1
 
 Node version: 
-  9.11.1
+  8.9.2
 
 Platform: 
-  darwin x64
-
-Trace: 
-  Error: https://registry.yarnpkg.com/@nuxtjs%2fgoogle-analytic: Not found
-      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:65327:18)
-      at Request.self.callback (/usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:133155:22)
-      at Request.emit (events.js:180:13)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:134138:10)
-      at Request.emit (events.js:180:13)
-      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:134058:12)
-      at Object.onceWrapper (events.js:272:13)
-      at IncomingMessage.emit (events.js:185:15)
-      at endReadableNT (_stream_readable.js:1106:12)
-      at process._tickCallback (internal/process/next_tick.js:178:19)
+  win32 x64
 
 npm manifest: 
   {
     "name": "nuxt-express",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Nuxt.js + Express.js + Sass Perfect Starter Template",
     "author": "Peter Kim <peterkimzz69@gmail.com>",
     "private": true,
@@ -43,13 +30,15 @@ npm manifest:
     },
     "dependencies": {
       "@nuxtjs/axios": "^5.3.1",
+      "@nuxtjs/google-analytics": "^2.0.2",
+      "@nuxtjs/sentry": "^1.0.3",
+      "@nuxtjs/sitemap": "^0.1.1",
       "axios": "^0.18.0",
       "body-parser": "^1.18.2",
       "connect-redis": "^3.3.3",
       "cors": "^2.8.4",
       "express": "^4.16.3",
       "express-session": "^1.15.6",
-      "mongoose": "^5.0.15",
       "morgan": "^1.9.0",
       "nodemon": "^1.17.3",
       "nuxt": "^1.4.0",
@@ -160,12 +149,36 @@ Lockfile:
       axios-retry "^3.0.2"
       consola "^1.1.4"
   
+  "@nuxtjs/google-analytics@^2.0.2":
+    version "2.0.2"
+    resolved "https://registry.yarnpkg.com/@nuxtjs/google-analytics/-/google-analytics-2.0.2.tgz#75353143628fd7697b41eb5aa7da38a513394eca"
+    dependencies:
+      vue-analytics "^5.4.0"
+  
   "@nuxtjs/proxy@^1.2.4":
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/@nuxtjs/proxy/-/proxy-1.2.4.tgz#41aafac58854f14e28aed17238936bb6404e6071"
     dependencies:
       consola "^1.1.4"
       http-proxy-middleware "^0.18.0"
+  
+  "@nuxtjs/sentry@^1.0.3":
+    version "1.0.3"
+    resolved "https://registry.yarnpkg.com/@nuxtjs/sentry/-/sentry-1.0.3.tgz#e7de4231fd90815cb7bba9dda297f6edf56c067c"
+    dependencies:
+      raven "^2.3.0"
+      raven-js "^3.21.0"
+  
+  "@nuxtjs/sitemap@^0.1.1":
+    version "0.1.1"
+    resolved "https://registry.yarnpkg.com/@nuxtjs/sitemap/-/sitemap-0.1.1.tgz#25031515289e506aa8d3decc33e31569bb023a95"
+    dependencies:
+      async-cache "^1.1.0"
+      fs-extra "^5.0.0"
+      is-https "^1.0.0"
+      lodash "^4.17.5"
+      minimatch "^3.0.4"
+      sitemap "^1.13.0"
   
   "@nuxtjs/youch@^4.2.3":
     version "4.2.3"
@@ -391,6 +404,12 @@ Lockfile:
   assign-symbols@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/assign-symbols/-/assign-symbols-1.0.0.tgz#59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367"
+  
+  async-cache@^1.1.0:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/async-cache/-/async-cache-1.1.0.tgz#4a9a5a89d065ec5d8e5254bd9ee96ba76c532b5a"
+    dependencies:
+      lru-cache "^4.0.0"
   
   async-each@^1.0.0:
     version "1.0.1"
@@ -1424,6 +1443,10 @@ Lockfile:
     version "0.4.2"
     resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.4.2.tgz#b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2"
   
+  charenc@~0.0.1:
+    version "0.0.2"
+    resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
+  
   check-types@^7.3.0:
     version "7.3.0"
     resolved "https://registry.yarnpkg.com/check-types/-/check-types-7.3.0.tgz#468f571a4435c24248f5fd0cb0e8d87c3c341e7d"
@@ -1845,6 +1868,10 @@ Lockfile:
       lru-cache "^4.0.1"
       shebang-command "^1.2.0"
       which "^1.2.9"
+  
+  crypt@~0.0.1:
+    version "0.0.2"
+    resolved "https://registry.yarnpkg.com/crypt/-/crypt-0.0.2.tgz#88d7ff7ec0dfb86f713dc87bbb42d044d3e6c41b"
   
   cryptiles@2.x.x:
     version "2.0.5"
@@ -3449,7 +3476,7 @@ Lockfile:
     dependencies:
       binary-extensions "^1.0.0"
   
-  is-buffer@^1.1.5:
+  is-buffer@^1.1.5, is-buffer@~1.1.1:
     version "1.1.6"
     resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   
@@ -3538,6 +3565,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/is-glob/-/is-glob-4.0.0.tgz#9521c76845cc2610a85203ddf080a958c2ffabc0"
     dependencies:
       is-extglob "^2.1.1"
+  
+  is-https@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/is-https/-/is-https-1.0.0.tgz#9c1dde000dc7e7288edb983bef379e498e7cb1bf"
   
   is-installed-globally@^0.1.0:
     version "0.1.0"
@@ -3976,7 +4007,7 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
   
-  lru-cache@^4.0.1, lru-cache@^4.1.1:
+  lru-cache@^4.0.0, lru-cache@^4.0.1, lru-cache@^4.1.1:
     version "4.1.3"
     resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.3.tgz#a1175cf3496dfc8436c156c334b4955992bce69c"
     dependencies:
@@ -4017,6 +4048,14 @@ Lockfile:
     dependencies:
       hash-base "^3.0.0"
       inherits "^2.0.1"
+  
+  md5@^2.2.1:
+    version "2.2.1"
+    resolved "https://registry.yarnpkg.com/md5/-/md5-2.2.1.tgz#53ab38d5fe3c8891ba465329ea23fac0540126f9"
+    dependencies:
+      charenc "~0.0.1"
+      crypt "~0.0.1"
+      is-buffer "~1.1.1"
   
   media-typer@0.3.0:
     version "0.3.0"
@@ -5600,6 +5639,20 @@ Lockfile:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
   
+  raven-js@^3.21.0:
+    version "3.25.2"
+    resolved "https://registry.yarnpkg.com/raven-js/-/raven-js-3.25.2.tgz#d3ad1c694f70855dda6f705204ee6ab76ba62884"
+  
+  raven@^2.3.0:
+    version "2.6.2"
+    resolved "https://registry.yarnpkg.com/raven/-/raven-2.6.2.tgz#c92f30890e2dfcd15258d184e43e39326e58032e"
+    dependencies:
+      cookie "0.3.1"
+      md5 "^2.2.1"
+      stack-trace "0.0.10"
+      timed-out "4.0.1"
+      uuid "3.0.0"
+  
   raw-body@2.3.2:
     version "2.3.2"
     resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.3.2.tgz#bcd60c77d3eb93cde0050295c3f379389bc88f89"
@@ -6197,6 +6250,13 @@ Lockfile:
     dependencies:
       is-arrayish "^0.3.1"
   
+  sitemap@^1.13.0:
+    version "1.13.0"
+    resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-1.13.0.tgz#569cbe2180202926a62a266cd3de09c9ceb43f83"
+    dependencies:
+      underscore "^1.7.0"
+      url-join "^1.1.0"
+  
   slash@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
@@ -6601,7 +6661,7 @@ Lockfile:
     version "2.3.8"
     resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   
-  timed-out@^4.0.0:
+  timed-out@4.0.1, timed-out@^4.0.0:
     version "4.0.1"
     resolved "https://registry.yarnpkg.com/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
   
@@ -6780,6 +6840,10 @@ Lockfile:
     dependencies:
       debug "^2.2.0"
   
+  underscore@^1.7.0:
+    version "1.9.0"
+    resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.0.tgz#31dbb314cfcc88f169cd3692d9149d81a00a73e4"
+  
   union-value@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/union-value/-/union-value-1.0.0.tgz#5c71c34cb5bad5dcebe3ea0cd08207ba5aa1aea4"
@@ -6874,6 +6938,10 @@ Lockfile:
     version "0.1.0"
     resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   
+  url-join@^1.1.0:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/url-join/-/url-join-1.1.0.tgz#741c6c2f4596c4830d6718460920d0c92202dc78"
+  
   url-join@^2.0.2:
     version "2.0.5"
     resolved "https://registry.yarnpkg.com/url-join/-/url-join-2.0.5.tgz#5af22f18c052a000a48d7b82c5e9c2e2feeda728"
@@ -6927,6 +6995,10 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   
+  uuid@3.0.0:
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.0.tgz#6728fc0459c450d796a99c31837569bdf672d728"
+  
   uuid@^3.0.0, uuid@^3.1.0:
     version "3.2.1"
     resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
@@ -6963,6 +7035,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
     dependencies:
       indexof "0.0.1"
+  
+  vue-analytics@^5.4.0:
+    version "5.12.2"
+    resolved "https://registry.yarnpkg.com/vue-analytics/-/vue-analytics-5.12.2.tgz#6318be3cfa0ce7fa6b00cb8a9fcd42268e75fab8"
   
   vue-eslint-parser@^2.0.3:
     version "2.0.3"
@@ -7311,3 +7387,19 @@ Lockfile:
       cliui "^2.1.0"
       decamelize "^1.0.0"
       window-size "0.1.0"
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c nodemon server
+  Directory: C:\Users\peter\Desktop\dev\projects\nuxt-express-perfect-starter-template
+  Output:
+  
+      at ProcessTermError.MessageError (C:\Users\peter\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Users\peter\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Users\peter\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
