@@ -1,65 +1,104 @@
+const axios = require('axios')
+const { OG_SITELINK, GOOGLE_ANALYTICS, SENTRY_DSN, GITHUB_CLIENT_ID } = process.env
+
+const META_TITLE = 'Nuxt.js + Express.js Perfect Starter Template'
+const META_DESCRIPTION = 'Nuxt.js Expressjs Bolierplate.'
+
 module.exports = {
   srcDir: 'app/',
   head: {
-    title: 'Nuxt.js + Express.js Perfect Starter Template',
+    title: META_TITLE || 'Nuxt App',
     meta: [
-      { charset: 'utf-8' },
+      { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
+      { name: 'robots', content: 'index, follow' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: 'Nuxt.js + Express.js + Sass Starter Template by Factory Hunt Team'
+        content: META_DESCRIPTION
       },
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'nuxtjs, nuxt, node, nodejs, express, expressjs, axios, scss, sass, google'
-      }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        content: 'peterkimzz'
+      },
+      { hid: 'canonical', rel: 'canonical', href: OG_SITELINK },
+      { hid: 'og-site_name', property: 'og:site_name', content: 'nuxt + express bolierplate' },
+      { hid: 'og-type', property: 'og:type', content: 'website' },
+      { hid: 'og-title', property: 'og:title', content: 'nuxt + express bolierplate' },
       {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900'
-      }
-    ]
+        hid: 'og-description',
+        property: 'og:description',
+        content: META_DESCRIPTION
+      },
+      {
+        hid: 'og-image',
+        property: 'og:image',
+        content: 'https://google.com'
+      },
+      { hid: 'og-url', property: 'og:url', content: OG_SITELINK },
+
+      { hid: 'twitter-site', property: 'twitter:site', content: '@peterkimzz' },
+      { hid: 'twitter-card', property: 'twitter:card', content: 'summary' },
+      { hid: 'twitter-title', property: 'twitter:title', content: META_TITLE },
+      {
+        hid: 'twitter-description',
+        property: 'twitter:description',
+        content: META_DESCRIPTION
+      },
+      {
+        hid: 'twitter-image',
+        property: 'twitter:image',
+        content: 'https://google.com'
+      },
+      { hid: 'twitter-domain', property: 'twitter:domain', content: OG_SITELINK }
+    ],
+    link: [{ rel: 'icon', href: '/favicon.png' }]
   },
-  // variables in "env" are use client & server side. ex) const url = process.env.baseUrl
+  loading: { color: '#B73333' },
+  css: [
+    {
+      src: '~assets/scss/base.scss'
+    }
+  ],
   env: {
-    host: '127.0.0.1',
-    port: '3000',
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    PUBLIC_LINK: process.env.PUBLIC_LINK || 'yourdomain.com',
+    BASE_URL: process.env.BASE_URL || 'http://127.0.0.1:3000',
+    GITHUB_CLIENT_ID: GITHUB_CLIENT_ID || 'YOUR_GITHUB_CLIENT_ID'
   },
-  loading: { color: '#3B8070' },
-  css: ['~assets/scss/index.scss'],
   modules: [
-    '@nuxtjs/axios',
+    '@nuxtjs/sentry',
     '@nuxtjs/sitemap',
     [
       '@nuxtjs/google-analytics',
       {
-        id: 'AB-12345-6' // Replace your api key
+        id: GOOGLE_ANALYTICS || 'YOUR_ANALYTICS_KEY'
       }
     ]
   ],
   sentry: {
-    public_key: '',
-    private_key: '',
-    project_id: '',
     config: {
-      // Additional config
+      dsn: SENTRY_DSN || 'YOUR_SENTRY_DSN'
     }
   },
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://127.0.0.1.com',
+    hostname: OG_SITELINK || 'localhost',
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     generate: false, // Enable me when using nuxt generate
-    exclude: ['/admin/**']
+    exclude: ['/admin', '/admin/**'],
+    routes: async () => {
+      const { BASE_URL } = process.env
+      const api = `${BASE_URL}/api/sitemap`
+
+      const { data } = await axios.get(api)
+      return data
+    }
   },
-  plugins: ['~/plugins/axios'],
   build: {
+    vendor: ['axios'],
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
