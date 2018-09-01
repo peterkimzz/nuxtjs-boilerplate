@@ -14,12 +14,13 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
   async asyncData({ app }) {
-    const posts = await app.$axios.$get('http://jsonplaceholder.typicode.com/posts')
+    const { data } = await axios.get('http://jsonplaceholder.typicode.com/posts')
 
     return {
-      posts
+      posts: data
     }
   }
 }

@@ -3,16 +3,13 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-.body-contents {
-  min-height: 80vh;
-}
 
-@media (min-width:744px) {
+@media (min-width: 744px) {
   .body-container {
     padding: 0 30px;
   }
 }
-@media (min-width:1128px) {
+@media (min-width: 1128px) {
   .body-container {
     padding: 0;
   }

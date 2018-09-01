@@ -38,7 +38,7 @@
 <style lang="scss" scoped>
 @import '~assets/scss/index';
 footer {
-  border-top: $border-light-gray;
+  border-top: 1px solid $color-border-gray;
   padding-top: 18px;
   padding-bottom: 60px;
   display: flex;
