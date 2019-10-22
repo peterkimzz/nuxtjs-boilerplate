@@ -1,23 +1,20 @@
-# Nuxt.js + Express.js Perfect Starter Template
+# Nuxt.js Bolierplate
 
-> Nuxt.js + Express.js + Sass, Scss + Vuex + Express Session + Redis + Axios + Google Analytics + Sitemap Auto Generator
+> Nuxt.js + Sass, Scss + Vuex + Axios + Google Analytics + Sitemap Auto Generator
 
 ## Build Setup
 
 ```bash
 # install dependencies
-$ yarn
+$ npm run
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+# serve with hot reload at localhost:3001
+$ npm run dev
 
 # build for production and launch server
-$ yarn build
-$ yarn start
+$ npm run build
+$ npm run start
 
 # generate static project
-$ yarn generate
+$ npm run generate
 ```
-
-.
-peterkimzz.com

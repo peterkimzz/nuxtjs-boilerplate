@@ -1,113 +1,86 @@
-const axios = require('axios')
-const { OG_SITELINK, GOOGLE_ANALYTICS, SENTRY_DSN, GITHUB_CLIENT_ID } = process.env
-
-const META_TITLE = 'Nuxt.js + Express.js Perfect Starter Template'
-const META_DESCRIPTION = 'Nuxt.js Expressjs Bolierplate.'
-
 module.exports = {
-  srcDir: 'app/',
+  mode: 'universal',
+  server: {
+    port: 3001
+  },
+  srcDir: 'src/',
   head: {
-    title: META_TITLE || 'Nuxt App',
+    title: 'Nuxt.js Bolierplate :: peterkimzz',
     meta: [
       { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
       { name: 'robots', content: 'index, follow' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'description',
-        name: 'description',
-        content: META_DESCRIPTION
+        name: 'viewport',
+        content:
+          'width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'
       },
       {
-        hid: 'keywords',
-        name: 'keywords',
-        content: 'peterkimzz'
-      },
-      { hid: 'canonical', rel: 'canonical', href: OG_SITELINK },
-      { hid: 'og-site_name', property: 'og:site_name', content: 'nuxt + express bolierplate' },
-      { hid: 'og-type', property: 'og:type', content: 'website' },
-      { hid: 'og-title', property: 'og:title', content: 'nuxt + express bolierplate' },
-      {
-        hid: 'og-description',
-        property: 'og:description',
-        content: META_DESCRIPTION
+        name: 'naver-site-verification',
+        content: 'xxxx'
       },
       {
-        hid: 'og-image',
-        property: 'og:image',
-        content: 'https://google.com'
-      },
-      { hid: 'og-url', property: 'og:url', content: OG_SITELINK },
-
-      { hid: 'twitter-site', property: 'twitter:site', content: '@peterkimzz' },
-      { hid: 'twitter-card', property: 'twitter:card', content: 'summary' },
-      { hid: 'twitter-title', property: 'twitter:title', content: META_TITLE },
-      {
-        hid: 'twitter-description',
-        property: 'twitter:description',
-        content: META_DESCRIPTION
-      },
-      {
-        hid: 'twitter-image',
-        property: 'twitter:image',
-        content: 'https://google.com'
-      },
-      { hid: 'twitter-domain', property: 'twitter:domain', content: OG_SITELINK }
+        name: 'google-site-verification',
+        content: 'xxxx'
+      }
     ],
-    link: [{ rel: 'icon', href: '/favicon.png' }]
-  },
-  loading: { color: '#B73333' },
-  css: [
-    {
-      src: '~assets/scss/base.scss'
-    }
-  ],
-  env: {
-    PUBLIC_LINK: process.env.PUBLIC_LINK || 'yourdomain.com',
-    BASE_URL: process.env.BASE_URL || 'http://127.0.0.1:3000',
-    GITHUB_CLIENT_ID: GITHUB_CLIENT_ID || 'YOUR_GITHUB_CLIENT_ID'
-  },
-  modules: [
-    '@nuxtjs/sentry',
-    '@nuxtjs/sitemap',
-    [
-      '@nuxtjs/google-analytics',
+    link: [{ rel: 'icon', href: '/favicon.png' }],
+    script: [
       {
-        id: GOOGLE_ANALYTICS || 'YOUR_ANALYTICS_KEY'
+        src: 'https://use.fontawesome.com/releases/v5.11.2/js/all.js'
       }
     ]
+  },
+  loading: { color: '#B73333', height: '3px' },
+  pageTransition: 'fade',
+  router: {
+    // middleware: ['me'],
+    // scrollBehavior: (to, from, savedPosition) => ({ x: 0, y: 0 })
+  },
+  env: {},
+  plugins: [
+    { src: '~plugins/axios' },
+    { src: '~plugins/element-ui' },
+    { src: '~plugins/vue-moment' },
+    { src: '~plugins/vue-scroll-reveal', mode: 'client' },
+    { src: '~plugins/vue-scrollto', mode: 'client' },
+    { src: '~plugins/vue-burger-menu', mode: 'client' }
   ],
-  sentry: {
-    config: {
-      dsn: SENTRY_DSN || 'YOUR_SENTRY_DSN'
-    }
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/sitemap'
+  ],
+  googleAnalytics: {
+    id: 'UA-114457301-1'
+  },
+  styleResources: {
+    scss: ['node_modules/open-color/open-color.scss', '~assets/scss/index.scss']
   },
   sitemap: {
+    hostname: 'http://www.YOUR_DOMAIN.com',
     path: '/sitemap.xml',
-    hostname: OG_SITELINK || 'localhost',
-    cacheTime: 1000 * 60 * 15,
     gzip: true,
-    generate: false, // Enable me when using nuxt generate
-    exclude: ['/admin', '/admin/**'],
-    routes: async () => {
-      const { BASE_URL } = process.env
-      const api = `${BASE_URL}/api/sitemap`
+    exclude: ['/users'],
+    routes: ['/', '/login']
+    /*
+      Generate Dynamic Routes
+    */
+    // routes: async () => {
 
-      const { data } = await axios.get(api)
-      return data
-    }
+    //    const axios = require('axios')
+    //   const { BASE_URL } = process.env;
+    //   const api = `${BASE_URL}/api/sitemap`;
+    //   const { data } = await axios.get(api);
+    //   return data;
+    //   return ''
+    // }
   },
   build: {
-    vendor: ['axios'],
-    extend(config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
+    extend(config, ctx) {}
+  },
+  generate: {
+    dir: 'public'
   }
 }
