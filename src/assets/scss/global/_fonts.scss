@@ -26,11 +26,10 @@
 }
 
 body {
-  font-weight: 500;
-  line-height: 1.8;
   font-size: 14px;
-  color: #444;
+  font-weight: 500;
   word-break: keep-all;
+  color: #444;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -40,7 +39,9 @@ body {
 }
 
 * {
+  box-sizing: border-box;
   font-family: 'Nanum Barun Gothic', sans-serif;
+  line-height: 1.8;
 }
 
 a {
