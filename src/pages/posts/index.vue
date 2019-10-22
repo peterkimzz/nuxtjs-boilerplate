@@ -14,13 +14,23 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 export default {
-  async asyncData({ app }) {
-    const { data } = await axios.get('http://jsonplaceholder.typicode.com/posts')
+  async asyncData({ app, error }) {
+    try {
+      const { data } = await app.$axios.get(
+        'http://jsonplaceholder.typicode.com/posts'
+      )
 
+      return {
+        posts: data
+      }
+    } catch (err) {
+      error()
+    }
+  },
+  data() {
     return {
-      posts: data
+      posts: []
     }
   }
 }
@@ -37,7 +47,7 @@ export default {
     transition: box-shadow 0.1s linear;
 
     &:hover {
-      box-shadow: $box-shadow;
+      box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.3);
       cursor: pointer;
     }
   }

@@ -1,45 +1,26 @@
 <template>
-  <section id="container">
+  <div id="container">
     <div>
-      <app-logo/>
       <h1 class="title">Nuxt + Express</h1>
       <ul>
         <li>
           <h2 class="subtitle">Nuxt.js</h2>
         </li>
         <li>
-          <h2 class="subtitle">Express.js</h2>
-        </li>
-        <li>
           <h2 class="subtitle">Scss</h2>
-        </li>
-        <li>
-          <h2 class="subtitle">Redis Session</h2>
         </li>
       </ul>
       <div class="links">
+        <el-button>Button</el-button>
         <nuxt-link 
           to="/posts" 
           class="button--grey">See Sample posts using axios.</nuxt-link>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
-<script>
-import AppLogo from '~/components/AppLogo.vue'
-
-export default {
-  components: {
-    AppLogo
-  },
-  mounted() {}
-}
-</script>
-
 <style lang="scss" scoped>
-@import '~assets/scss/index';
-
 #container {
   display: flex;
   justify-content: center;

@@ -4,6 +4,9 @@ module.exports = {
     port: 3001
   },
   srcDir: 'src/',
+  generate: {
+    dir: 'public'
+  },
   head: {
     title: 'Nuxt.js Bolierplate :: peterkimzz',
     meta: [
@@ -16,22 +19,18 @@ module.exports = {
           'width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'
       },
       {
-        name: 'naver-site-verification',
-        content: 'xxxx'
-      },
-      {
         name: 'google-site-verification',
         content: 'xxxx'
       }
     ],
-    link: [{ rel: 'icon', href: '/favicon.png' }],
+    link: [{ rel: 'icon', href: '/favicon.ico' }],
     script: [
       {
         src: 'https://use.fontawesome.com/releases/v5.11.2/js/all.js'
       }
     ]
   },
-  loading: { color: '#B73333', height: '3px' },
+  loading: { color: '#42b883', height: '3px' },
   pageTransition: 'fade',
   router: {
     // middleware: ['me'],
@@ -79,8 +78,5 @@ module.exports = {
   },
   build: {
     extend(config, ctx) {}
-  },
-  generate: {
-    dir: 'public'
   }
 }

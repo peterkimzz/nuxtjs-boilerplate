@@ -30,7 +30,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~assets/scss/index';
 nav {
   display: table;
   position: relative;

@@ -1,26 +1,22 @@
 <template>
-  <div>
-    <navigation-bar/>
+  <div id="default-layout">
+    <vue-navigation/>
     <div class="body-container">
       <div class="body-contents">
         <nuxt/>
       </div>
-      <footer-bar/>
+      <vue-footer/>
     </div>
   </div>
 </template>
 
 <script>
-import NavigationBar from '~/components/NavigationBar'
-import FooterBar from '~/components/FooterBar'
+import VueNavigation from '~/components/groups/Navigation'
+import VueFooter from '~/components/groups/Footer'
 export default {
   components: {
-    NavigationBar,
-    FooterBar
+    VueNavigation,
+    VueFooter
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import '~assets/scss/index';
-</style>
