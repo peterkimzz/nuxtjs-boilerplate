@@ -29,7 +29,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   word-break: keep-all;
-  color: #444;
+  color: $--color-text-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -45,7 +45,14 @@ body {
 }
 
 a {
-  color: $--color-primary;
+  color: $--color-text-primary;
+  transition: 0.2s;
+  text-decoration: none;
+
+  &:hover {
+    color: $--color-primary;
+    text-decoration: underline;
+  }
 }
 
 h1,

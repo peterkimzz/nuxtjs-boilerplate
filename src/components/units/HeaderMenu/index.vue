@@ -5,13 +5,10 @@
     <div class="desktop-only">
       <span 
         class="link"
-        v-scroll-to="'#about'">학원 소개</span>
+        v-scroll-to="'#about'">포스트</span>
       <span 
         class="link"
-        v-scroll-to="'#feature'">특징</span>
-      <span 
-        class="link"
-        v-scroll-to="'#contact'">문의하기</span>
+        v-scroll-to="'#feature'">로그인</span>
     </div>
 
     <div class="mobile-only">
@@ -19,35 +16,6 @@
         aria-hidden="true"
         class="fa fa-bars menu-icon" 
         @click="isOpen = !isOpen"/>
-      <el-drawer
-        title="메뉴"
-        :visible.sync="isOpen"
-        direction="rtl"
-        size="80%">
-        <ul class="menu-container">
-          <li
-            :arrow="false"
-            href="/" 
-            is="vue-header-menu-link">홈</li>
-
-          <h5 class="menu__title">메뉴</h5>
-          <li
-            v-scroll-to="'#about'"
-            :arrow="false"
-            is="vue-header-menu-link"
-            @click="isOpen = false">학원 소개</li>
-          <li
-            v-scroll-to="'#feature'"
-            :arrow="false"
-            is="vue-header-menu-link"
-            @click="isOpen = false">학원 특징</li>
-          <li
-            v-scroll-to="'#contact'"
-            :arrow="false"
-            is="vue-header-menu-link"
-            @click="isOpen = false">문의하기</li>
-        </ul>
-      </el-drawer>
     </div>
   </ul>
 </template>

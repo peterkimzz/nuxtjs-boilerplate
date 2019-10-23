@@ -1,15 +1,18 @@
 <template>
   <div class="hero">
-    <div class="max-width">
-      <div class="lr-padding">
-        <slot/>
-      </div>
-    </div>
+    <vue-container>
+      <h1 v-html="title"></h1>
+      <slot/>
+    </vue-container>
   </div>
 </template>
 
 <script>
+import VueContainer from '~/containers'
 export default {
+  components: {
+    VueContainer
+  },
   props: {
     title: {
       type: String,
@@ -40,5 +43,11 @@ export default {
   //   bottom: 0;
   //   background-color: rgba(0, 0, 0, 0.2);
   // }
+}
+
+h1 {
+  margin: 0;
+  padding-top: 40px;
+  font-size: 50px;
 }
 </style>

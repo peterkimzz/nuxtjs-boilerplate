@@ -1,70 +1,65 @@
 <template>
-  <nav>
-    <!-- Logo -->
-    <div class="nav-section">
-      <a href="/">
-        <div id="nav-logo-container">
-          <img 
-            id="nav-logo" 
-            src="~/assets/img/nuxt-logo.png" 
-            alt="logo">
-        </div>
-      </a>
-    </div>
+  <header 
+    class="header"
+    @scroll.native="scroll">
+    <vue-container>
+      <div class="flex justify-content-between align-items-center">
+        <vue-brand-logo 
+          src="/nuxt_logo.png"
+          class="logo"/>
 
-    <!-- Center -->
-    <div 
-      id="nav-center-container"
-      class="nav-section"/>
-
-    <!-- Buttons -->
-    <div 
-      id="nav-button-container"
-      class="nav-section">
-      <ul>
-        <li><nuxt-link to="/register">Sign Up</nuxt-link></li>
-        <li><nuxt-link to="/login">Login</nuxt-link></li>
-      </ul>
-    </div>
-  </nav>
+        <vue-header-menu class="header-menu"/>
+      </div>
+    </vue-container>
+  </header>
 </template>
 
-<style lang="scss" scoped>
-nav {
-  display: table;
-  position: relative;
-  width: 100%;
+<script>
+import VueContainer from '~/containers'
+import VueBrandLogo from '~/components/units/BrandLogo'
+import VueHeaderMenu from '~/components/units/HeaderMenu'
+export default {
+  components: {
+    VueContainer,
+    VueBrandLogo,
+    VueHeaderMenu
+  },
+  data: _ => ({
+    scrolled: false
+  }),
+  methods: {
+    handleScroll() {
+      this.scrolled = window.scrollY > 0
+    }
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
 }
-.nav-section {
-  display: table-cell;
-  height: 100%;
+</script>
+
+<style lang="scss">
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: all 0.3s;
+  background-color: $oc-white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+
+  a,
+  i {
+    color: $oc-gray-9;
+  }
 }
 
-#nav-logo-container {
-  position: relative;
-  padding: 14px;
-}
-#nav-logo {
-  width: 60px;
-  height: 60px;
-}
-
-#nav-center-container {
-  width: 100%;
-}
-
-#nav-button-container {
-  width: 100%;
-  padding: 0 20px;
-  vertical-align: middle;
-  white-space: nowrap;
-}
-ul {
-  margin: 0;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin-right: 24px;
+.logo {
+  width: 30px;
+  padding: 18px 0;
 }
 </style>

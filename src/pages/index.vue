@@ -1,20 +1,27 @@
 <template>
   <div id="container">
-    <div>
-      <h1 class="title">Nuxtjs Boilerplate</h1>
-      <ul>
-        <li>
-          <h2 class="subtitle">Nuxt.js</h2>
-        </li>
-        <li>
-          <h2 class="subtitle">Scss</h2>
-        </li>
-      </ul>
-      <div class="links">
-        <nuxt-link 
-          to="/posts" 
-          class="button--grey">See Sample posts using axios.</nuxt-link>
+    <vue-hero
+      title="Nuxtjs<br>Boilerplate">
+    </vue-hero>
+    <vue-container>
+      <div>
+        <div class="links">
+          <nuxt-link 
+            to="/posts" 
+            class="button--grey">See Sample posts using axios.</nuxt-link>
+        </div>
       </div>
-    </div>
+    </vue-container>
   </div>
 </template>
+
+<script>
+import VueContainer from '~/containers'
+import VueHero from '~/components/units/Hero'
+export default {
+  components: {
+    VueContainer,
+    VueHero
+  }
+}
+</script>
