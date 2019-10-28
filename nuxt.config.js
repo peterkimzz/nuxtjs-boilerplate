@@ -30,9 +30,6 @@ module.exports = {
     script: [
       {
         src: 'https://use.fontawesome.com/releases/v5.11.2/js/all.js'
-      },
-      {
-        // src: 'https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js'
       }
     ]
   },
@@ -59,7 +56,7 @@ module.exports = {
     '@nuxtjs/sitemap'
   ],
   googleAnalytics: {
-    id: 'UA-114457301-1'
+    id: 'GA-YOUR-KEY'
   },
   styleResources: {
     scss: ['node_modules/open-color/open-color.scss', '~assets/scss/index.scss']
