@@ -9,6 +9,7 @@ export const actions = {
     try {
       console.log('nuxt server init.')
     } catch (err) {
+      console.log(err)
       console.log('Error occured..\n')
     }
   }

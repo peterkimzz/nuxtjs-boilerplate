@@ -30,6 +30,9 @@ module.exports = {
     script: [
       {
         src: 'https://use.fontawesome.com/releases/v5.11.2/js/all.js'
+      },
+      {
+        // src: 'https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js'
       }
     ]
   },
@@ -42,6 +45,7 @@ module.exports = {
   env: {},
   plugins: [
     { src: '~plugins/axios' },
+    { src: '~plugins/firebase' },
     { src: '~plugins/element-ui' },
     { src: '~plugins/vue-moment' },
     { src: '~plugins/vue-scroll-reveal', mode: 'client' },

@@ -2,13 +2,14 @@
   <div id="container">
     <vue-hero
       title="Nuxtjs<br>Boilerplate">
+      <nuxt-link 
+        to="/posts" 
+        class="button--grey">See Sample posts using axios.</nuxt-link>
     </vue-hero>
     <vue-container>
       <div>
         <div class="links">
-          <nuxt-link 
-            to="/posts" 
-            class="button--grey">See Sample posts using axios.</nuxt-link>
+          
         </div>
       </div>
     </vue-container>

@@ -1,5 +1,3 @@
-import axios from '~/plugins/axios'
-
 export const state = () => {
   user: null
 }
@@ -11,13 +9,12 @@ export const getters = {
 }
 
 export const mutations = {
-  login (state, payload) {
+  login(state, payload) {
     state.user = payload.user
   },
-  clearAuthData (state) {
+  clearAuthData(state) {
     state.user = null
   }
 }
 
-export const actions = {
-}
+export const actions = {}
