@@ -17,12 +17,12 @@
 </template>
 
 <script>
-import VueContainer from '~/containers'
+import VueContainer from '~/components/containers'
 import VueHero from '~/components/units/Hero'
 export default {
-  components: {
-    VueContainer,
-    VueHero
-  }
+	components: {
+		VueContainer,
+		VueHero
+	}
 }
 </script>

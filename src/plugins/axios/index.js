@@ -1,5 +1,6 @@
-export default ({ $axios, redirect }) => {
+export default ({ $axios }) => {
   const isProd = process.env.NODE_ENV === 'production'
+  const isDev = process.env.NODE_ENV === 'development'
 
   $axios.onRequest(config => {
     config.baseURL = isProd
@@ -10,10 +11,23 @@ export default ({ $axios, redirect }) => {
     return config
   })
 
-  $axios.onError(err => {
-    if (!isProd) {
-      console.error('axios error interceptors\n', err)
+  $axios.onResponse(res => {
+    if (isDev) {
+      console.log(res.data.data)
     }
-    return Promise.reject(err)
+
+    return res.data.data
+  })
+
+  $axios.onError(err => {
+    if (isDev) {
+      console.error('axios error interceptors\n', err.response.data.data)
+    }
+
+    if (!err.response) {
+      return Promise.reject(err)
+    }
+
+    return Promise.reject(err.response.data.data)
   })
 }

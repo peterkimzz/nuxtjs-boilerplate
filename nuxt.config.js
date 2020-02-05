@@ -1,7 +1,7 @@
 module.exports = {
   mode: 'universal',
   server: {
-    port: 3001
+    port: 3000
   },
   srcDir: 'src/',
   generate: {
@@ -42,7 +42,7 @@ module.exports = {
   env: {},
   plugins: [
     { src: '~plugins/axios' },
-    { src: '~plugins/firebase' },
+    // { src: '~plugins/firebase' },
     { src: '~plugins/element-ui' },
     { src: '~plugins/vue-moment' },
     { src: '~plugins/vue-scroll-reveal', mode: 'client' },
